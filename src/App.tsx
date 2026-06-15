@@ -1,6 +1,7 @@
 import { useState } from "react"
 import "./App.css"
 import Greeting from "./Greeting"
+import UserForm from "./UserForm"
 
 type UserCardProps = {
   name: string
@@ -62,6 +63,7 @@ function App() {
       <Button label="クリックしてね" />
       <Button label="無効なボタン" disabled />
       <Counter />
+      <UserForm />
     </>
   )
 }
