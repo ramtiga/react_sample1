@@ -1,3 +1,4 @@
+import { useState } from "react"
 import "./App.css"
 import Greeting from "./Greeting"
 
@@ -30,6 +31,29 @@ function Button({ label, disabled = false }: ButtonProps) {
   )
 }
 
+function Counter() {
+  const [count, setCount] = useState(0)
+
+  const increment = () => {
+    setCount((prev) => prev + 1)
+  }
+  const decrement = () => {
+    setCount((prev) => prev - 1)
+  }
+  const reset = () => {
+    setCount(0)
+  }
+
+  return (
+    <div>
+      <p>カウンタ：{count}</p>
+      <button onClick={increment}>カウントアップ</button>
+      <button onClick={decrement}>カウントダウン</button>
+      <button onClick={reset}>リセット</button>
+    </div>
+  )
+}
+
 function App() {
   return (
     <>
@@ -37,6 +61,7 @@ function App() {
       <UserCard name="Bob" age={30} email="bob@example.com" />
       <Button label="クリックしてね" />
       <Button label="無効なボタン" disabled />
+      <Counter />
     </>
   )
 }
