@@ -57,6 +57,29 @@ function Counter() {
   )
 }
 
+function Display({count}: { count: number}) {
+  return <p>カウント：{count}</p>
+}
+
+function Controller({ onIncrement }: { onIncrement: () => void }) {
+  return <button onClick={onIncrement}>+1</button>
+}
+
+function Parent() {
+  const [count, setCount] = useState(0)
+
+  const handleIncrement = () => {
+    setCount(prev => prev + 1)
+  }
+
+  return (
+    <div>
+      <Display count={count} />
+      <Controller onIncrement={handleIncrement} />
+    </div>
+  )
+}
+
 function App() {
   return (
     <>
@@ -68,6 +91,7 @@ function App() {
       <UserForm />
       <GreetingInput />
       <TodoList />
+      <Parent />
     </>
   )
 }
