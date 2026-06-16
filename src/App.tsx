@@ -3,6 +3,7 @@ import "./App.css"
 import Greeting from "./Greeting"
 import UserForm from "./UserForm"
 import GreetingInput from "./GreetingInput"
+import TodoList from "./TodoList"
 
 type UserCardProps = {
   name: string
@@ -66,6 +67,7 @@ function App() {
       <Counter />
       <UserForm />
       <GreetingInput />
+      <TodoList />
     </>
   )
 }
