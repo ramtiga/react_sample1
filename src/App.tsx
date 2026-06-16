@@ -4,6 +4,7 @@ import Greeting from "./Greeting"
 import UserForm from "./UserForm"
 import GreetingInput from "./GreetingInput"
 import TodoList from "./TodoList"
+import FormExample from "./FormExample"
 
 type UserCardProps = {
   name: string
@@ -92,6 +93,7 @@ function App() {
       <GreetingInput />
       <TodoList />
       <Parent />
+      <FormExample />
     </>
   )
 }
